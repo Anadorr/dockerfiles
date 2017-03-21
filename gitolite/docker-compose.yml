@@ -1,0 +1,10 @@
+#docker run -d -p 5922:22 -v /home/anadorr/gitolite-admin-volume:/home/git/repositories gitolite
+version: '3'
+services:
+   gitolite-web:
+     build: .
+     ports:
+     - "5922:22"
+     volumes:
+     - /home/anadorr/gitolite-admin-volume:/home/git/repositories
+     - ./.ssh:/home/git/.ssh
